@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* Changed from bg-charcoal to the new pink theme */
+    @apply bg-fro-bg text-white font-sans antialiased overflow-x-hidden selection:bg-fro-dark selection:text-white;
+  }
+}
+
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  /* Use the grain image defined in config */
+  @apply bg-grain opacity-[0.07];
+  /* Reduced opacity for lighter background */
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-toasted-gold to-creamy-white;
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 15s linear infinite;
+}
