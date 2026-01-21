@@ -16,13 +16,21 @@ function ScrollToTop() {
     return null;
 }
 
-// AppContent logic merged into main App component since Router is provided by main.tsx
 export default function App() {
     const [lenis, setLenis] = useState<Lenis | null>(null);
     const { hash } = useLocation();
 
     useEffect(() => {
-        const newLenis = new Lenis();
+        // Disable browser's automatic scroll restoration
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        const newLenis = new Lenis({
+            lerp: 0.1,
+            duration: 1.2,
+            smoothWheel: true
+        });
         setLenis(newLenis);
 
         function raf(time: number) {
@@ -31,17 +39,31 @@ export default function App() {
         }
         requestAnimationFrame(raf);
 
-        return () => newLenis.destroy();
+        // Force scroll to top on mount/refresh
+        const resetScroll = () => {
+            window.scrollTo(0, 0);
+            newLenis.scrollTo(0, { immediate: true });
+        };
+
+        // Try immediately
+        resetScroll();
+
+        // Try after a short delay to catch browser restoration logic or late rendering
+        const timer = setTimeout(resetScroll, 250);
+
+        return () => {
+            clearTimeout(timer);
+            newLenis.destroy();
+        };
     }, []);
 
-    // Handle Hash Scrolling
+    // Handle Hash Scrolling with Lenis compatibility
     useEffect(() => {
         if (lenis && hash) {
             const target = document.querySelector(hash);
             if (target) {
-                // Small delay to ensure render
                 setTimeout(() => {
-                    lenis.scrollTo(target as HTMLElement, { offset: -100 }); // Offset for navbar
+                    lenis.scrollTo(target as HTMLElement, { offset: -100 });
                 }, 100);
             }
         }
