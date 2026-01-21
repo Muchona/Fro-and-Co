@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 export default function BestSellers() {
     const images = [
-        "/gallery/item_1.jpg",
-        "/gallery/item_2.jpg",
-        "/gallery/item_3.jpg",
-        "/gallery/item_4.jpg",
-        "/gallery/item_5.jpg",
+        "gallery/item_1.jpg",
+        "gallery/item_2.jpg",
+        "gallery/item_3.jpg",
+        "gallery/item_4.jpg",
+        "gallery/item_5.jpg",
     ];
 
     return (

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Smartphone } from 'lucide-react';
+import AppBadges from './AppBadges';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -81,6 +82,25 @@ export default function Navbar() {
 
                     {/* Actions */}
                     <div className="flex items-center gap-4">
+                        <a
+                            href="https://play.google.com/store/apps/details?id=com.icrtouch.tta.froco&pcampaignid=web_share"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`
+                                hidden sm:flex items-center gap-2 
+                                px-4 py-2 rounded-full 
+                                font-mono text-[10px] font-bold uppercase tracking-widest
+                                transition-all duration-300
+                                ${scrolled
+                                    ? 'bg-fro-pink text-white hover:bg-white hover:text-fro-pink shadow-lg shadow-fro-pink/20'
+                                    : 'bg-fro-dark text-white hover:bg-fro-pink'
+                                }
+                            `}
+                        >
+                            <Smartphone className="w-3.5 h-3.5" />
+                            <span>Get the App</span>
+                        </a>
+
                         {/* Mobile Menu Toggle */}
                         <button
                             className={`md:hidden p-2 transition-colors relative z-[110] ${scrolled || mobileMenuOpen ? 'text-white' : 'text-fro-dark'}`}
@@ -118,6 +138,10 @@ export default function Navbar() {
                                     {link.name}
                                 </Link>
                             ))}
+                        </div>
+                        <div className="flex flex-col items-center gap-8 text-center pt-8">
+                            <p className="text-fro-pink font-mono text-[10px] uppercase tracking-widest opacity-60">Get our mobile app</p>
+                            <AppBadges size="md" className="justify-center scale-90" />
                         </div>
                     </motion.div>
                 )}

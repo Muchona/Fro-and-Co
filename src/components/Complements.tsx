@@ -1,15 +1,25 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 export default function Complements() {
     const snacks = [
-        { name: "Croissants", src: "/snacks/croissant.png", angle: 0 },
-        { name: "Cookies", src: "/snacks/cookies.png", angle: 72 },
-        { name: "Doughnuts", src: "/snacks/donuts.png", angle: 144 },
-        { name: "Muffins", src: "/snacks/muffin.png", angle: 216 },
-        { name: "Cinnamon Rolls", src: "/snacks/cinnamon.png", angle: 288 },
+        { name: "Croissants", src: "snacks/croissant.png", angle: 0 },
+        { name: "Cookies", src: "snacks/cookies.png", angle: 72 },
+        { name: "Doughnuts", src: "snacks/donuts.png", angle: 144 },
+        { name: "Muffins", src: "snacks/muffin.png", angle: 216 },
+        { name: "Cinnamon Rolls", src: "snacks/cinnamon.png", angle: 288 },
     ];
 
-    const radius = 280;
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    const radius = isMobile ? 120 : 280;
 
     return (
         <section className="py-24 bg-[#FDFBF7] overflow-hidden relative min-h-screen flex flex-col items-center justify-center">
@@ -21,7 +31,7 @@ export default function Complements() {
                 {/* We use a specific image that mimics the reference (Cup on saucer) */}
                 <div className="relative z-20 w-56 h-56 md:w-80 md:h-80 flex items-center justify-center">
                     <img
-                        src="/latte-center.png"
+                        src="latte-center.png"
                         alt="Latte Art"
                         // multiply blend to remove white bg if present, or just rounded
                         className="w-full h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
@@ -38,7 +48,7 @@ export default function Complements() {
                         return (
                             <div
                                 key={i}
-                                className="absolute top-1/2 left-1/2 -ml-16 -mt-16 w-32 h-32 flex flex-col items-center justify-center"
+                                className="absolute top-1/2 left-1/2 -ml-16 -mt-16 w-32 h-32 flex flex-col items-center justify-center pointer-events-none"
                                 style={{
                                     transform: `rotate(${snack.angle}deg) translate(${radius}px) rotate(-${snack.angle}deg)`
                                 }}
@@ -56,7 +66,7 @@ export default function Complements() {
 
                                     {/* Image - Floating, No Frame */}
                                     {/* mix-blend-multiply makes the white bg of the stock photo invisible on the cream page */}
-                                    <div className="w-32 h-32 md:w-40 md:h-40 transition-transform duration-300 group-hover:scale-110">
+                                    <div className="w-20 h-20 md:w-40 md:h-40 transition-transform duration-300 group-hover:scale-110">
                                         <img
                                             src={snack.src}
                                             alt={snack.name}

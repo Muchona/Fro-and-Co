@@ -51,10 +51,10 @@ export default function AboutPage() {
                         {/* Image Composition */}
                         <div className="relative">
                             <div className="aspect-[4/5] rounded-lg overflow-hidden border border-white/10 relative z-10">
-                                <img src="/gallery/item_1.jpg" alt="Interior" className="w-full h-full object-cover" />
+                                <img src="gallery/item_1.jpg" alt="Interior" className="w-full h-full object-cover" />
                             </div>
                             <div className="absolute top-10 -right-10 w-2/3 aspect-square rounded-lg overflow-hidden border border-white/10 z-20 shadow-2xl hidden md:block">
-                                <img src="/gallery/item_2.jpg" alt="Coffee Detail" className="w-full h-full object-cover" />
+                                <img src="gallery/item_2.jpg" alt="Coffee Detail" className="w-full h-full object-cover" />
                             </div>
                             {/* Decorative Elements */}
                             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-fro-pink/10 rounded-full blur-3xl" />

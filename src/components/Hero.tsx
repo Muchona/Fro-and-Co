@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import AppBadges from './AppBadges';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,7 +52,7 @@ export default function Hero() {
             <div className="relative z-10 mt-10 hero-img">
                 {/* Main Cup */}
                 <img
-                    src="/hero-cup.png"
+                    src="hero-cup.png"
                     alt="Fro & Co Special"
                     className="w-[350px] md:w-[500px] object-contain drop-shadow-2xl"
                 />
@@ -61,10 +62,14 @@ export default function Hero() {
             </div>
 
             {/* Foreground Elements */}
-            <div className="relative z-20 mt-10 flex flex-col items-center gap-8">
-                <p className="max-w-md text-center text-white/80 text-sm md:text-base font-medium">
+            <div className="relative z-20 mt-10 flex flex-col items-center gap-10">
+                <p className="max-w-md text-center text-white/80 text-sm md:text-base font-medium px-4">
                     From warm breads to delightful pastries, made with love and the finest ingredients.
                 </p>
+
+                <div className="flex flex-col items-center mt-48 md:mt-10">
+                    <AppBadges size="lg" className="justify-center" />
+                </div>
             </div>
 
             {/* Tape Strip */}

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react';
+import AppBadges from './AppBadges';
 
 export default function Footer() {
     return (
@@ -30,6 +31,12 @@ export default function Footer() {
                             <a href="https://www.facebook.com/froandcoofficial" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-fro-pink hover:text-white transition-all group">
                                 <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
                             </a>
+                        </div>
+
+                        {/* App Badges */}
+                        <div className="pt-4">
+                            <p className="text-fro-pink font-mono text-[10px] uppercase tracking-widest mb-4">Get the Mobile App</p>
+                            <AppBadges size="sm" className="justify-start scale-90 origin-left" />
                         </div>
                     </div>
 

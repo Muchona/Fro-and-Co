@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 // Generate array of 34 images
 const inputs = Array.from({ length: 34 }, (_, i) => ({
-    src: `/gallery/item_${i + 1}.jpg`,
+    src: `gallery/item_${i + 1}.jpg`,
     id: i + 1,
     title: `Moment ${i + 1}`,
 }));
@@ -40,7 +40,7 @@ export default function GalleryPage() {
 
             {/* Hero Section - Premium */}
             <div className="relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden border-b border-white/5">
-                <div className="absolute inset-0 bg-[url('/gallery/item_34.jpg')] bg-cover bg-center opacity-40 blur-sm scale-105" />
+                <div className="absolute inset-0 bg-[url('gallery/item_34.jpg')] bg-cover bg-center opacity-40 blur-sm scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/80 to-black" />
 
                 <div className="relative z-10 text-center px-6 pt-20">

@@ -19,7 +19,7 @@ const menuItems: MenuItem[] = [
     {
         name: "Espresso",
         price: "2.20",
-        image: "/menu/user_espresso.png",
+        image: "menu/user_espresso.png",
         desc: "The purest distillation of the bean. A concentrated shot with a rich, golden crema.",
         ingredients: ["18g Coffee Beans", "Hot Water", "Pressure"],
         bg: "bg-[#1a1515]",
@@ -29,7 +29,7 @@ const menuItems: MenuItem[] = [
     {
         name: "Americano",
         price: "2.60",
-        image: "/menu/user_americano.png",
+        image: "menu/user_americano.png",
         desc: "A smooth, elongated espresso experience. All the flavor, none of the intensity.",
         ingredients: ["Double Espresso", "Hot Water (Ratio 1:4)"],
         bg: "bg-[#121212]",
@@ -40,7 +40,7 @@ const menuItems: MenuItem[] = [
     {
         name: "Flat White",
         price: "2.95",
-        image: "/menu/user_flatwhite.png",
+        image: "menu/user_flatwhite.png",
         desc: "Velvety textured milk poured over espresso. The connoisseur's choice.",
         ingredients: ["Double Ristretto", "Microfoam Milk"],
         bg: "bg-[#2e2620]",
@@ -50,7 +50,7 @@ const menuItems: MenuItem[] = [
     {
         name: "Cappuccino",
         price: "2.95",
-        image: "/menu/user_cappuccino.png",
+        image: "menu/user_cappuccino.png",
         desc: "A perfect balance of espresso, steamed milk, and airy foam. Finished with cocoa.",
         ingredients: ["Espresso", "Steamed Milk", "Thick Milk Foam", "Cocoa Dust"],
         bg: "bg-[#1f1a18]",
@@ -60,7 +60,7 @@ const menuItems: MenuItem[] = [
     {
         name: "Mocha",
         price: "3.20",
-        image: "/menu/user_mocha.png",
+        image: "menu/user_mocha.png",
         desc: "Where coffee meets dessert. Rich chocolate blended with espresso and milk.",
         ingredients: ["Espresso", "Dark Chocolate Syrup", "Steamed Milk", "Latte Art"],
         bg: "bg-[#181010]",
@@ -70,7 +70,7 @@ const menuItems: MenuItem[] = [
     {
         name: "Latte",
         price: "2.95",
-        image: "/menu/user_latte.png",
+        image: "menu/user_latte.png",
         desc: "Light, creamy, and mild. A gentle espresso hug in a glass.",
         ingredients: ["Espresso", "Steamed Milk (Lots)", "Light Foam"],
         bg: "bg-[#261e1b]",

@@ -124,7 +124,7 @@ export default function Location() {
                             </div>
 
                             <img
-                                src="/awards/best-newcomer-2022.png"
+                                src="awards/best-newcomer-2022.png"
                                 alt="Best Newcomer 2022 - Irish Restaurant Awards"
                                 className="w-full max-w-md mx-auto object-contain drop-shadow-2xl mb-8 hover:scale-105 transition-transform duration-500"
                             />
