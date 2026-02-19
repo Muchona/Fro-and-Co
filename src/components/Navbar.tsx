@@ -141,7 +141,7 @@ export default function Navbar() {
                         </div>
                         <div className="flex flex-col items-center gap-8 text-center pt-8">
                             <p className="text-fro-pink font-mono text-[10px] uppercase tracking-widest opacity-60">Get our mobile app</p>
-                            <AppBadges size="md" className="justify-center scale-90" />
+                            <AppBadges className="justify-center scale-90" />
                         </div>
                     </motion.div>
                 )}

@@ -36,7 +36,7 @@ export default function Footer() {
                         {/* App Badges */}
                         <div className="pt-4">
                             <p className="text-fro-pink font-mono text-[10px] uppercase tracking-widest mb-4">Get the Mobile App</p>
-                            <AppBadges size="sm" className="justify-start scale-90 origin-left" />
+                            <AppBadges className="justify-start scale-90 origin-left" />
                         </div>
                     </div>
 

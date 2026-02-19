@@ -68,7 +68,7 @@ export default function Hero() {
                 </p>
 
                 <div className="flex flex-col items-center mt-48 md:mt-10">
-                    <AppBadges size="lg" className="justify-center" />
+                    <AppBadges className="justify-center" />
                 </div>
             </div>
 
